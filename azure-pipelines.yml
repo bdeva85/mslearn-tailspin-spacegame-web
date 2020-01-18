@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+# ASP.NET Core
+# Build and test ASP.NET Core projects targeting .NET Core.
+# Add steps that run tests, create a NuGet package, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+>>>>>>> origin
 trigger:
 - '*'
 
@@ -54,9 +62,12 @@ steps:
     arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
     zipAfterPublish: true
 
+<<<<<<< HEAD
 - task: WhiteSource Bolt@19
   displayName: 'Run WhiteSource Bolt'
 
+=======
+>>>>>>> origin
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   condition: succeeded()
