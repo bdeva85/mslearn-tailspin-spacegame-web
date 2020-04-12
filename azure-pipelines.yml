@@ -4,22 +4,12 @@ trigger:
 pool:
   vmImage: 'ubuntu-16.04'
   demands:
-  - npm
+    - npm
 
-<<<<<<< HEAD
-variables:
-  buildConfiguration: 'Release'
-
-=======
->>>>>>> 768b11c5ffb87669c68385815856a6d5e356fe32
 steps:
 - task: UseDotNet@2
   displayName: 'Use .NET Core SDK 3.1.100'
   inputs:
-<<<<<<< HEAD
-    packageType: sdk
-=======
->>>>>>> 768b11c5ffb87669c68385815856a6d5e356fe32
     version: 3.1.100
 
 - task: Npm@1
@@ -48,9 +38,6 @@ steps:
   inputs:
     command: 'build'
     arguments: '--no-restore --configuration Release'
-<<<<<<< HEAD
-    projects: '**/*.csproj'
-=======
     projects: '**/*.csproj'
 
 - task: DotNetCoreCLI@2
@@ -65,4 +52,3 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   condition: succeeded()
->>>>>>> 768b11c5ffb87669c68385815856a6d5e356fe32
